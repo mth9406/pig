@@ -87,7 +87,7 @@ optional arguments:
 ## High-level view of the model architecture
 
 The high-level view of th model architecture is as follows.       
-<img src="images/model_architecture.PNG"  width="700" height="370">
+<img src="images/model_architecture.png"  width="700" height="370">
 
 There are three main modules in the proposed model (PIG) 
       
@@ -99,19 +99,19 @@ There are three main modules in the proposed model (PIG)
     * makes final imputation and outputs predictions.
 
 ## Graph Learning Layer (GLL)
-<img src="images/graph_learning_with_label.PNG"  width="700" height="370">
+<img src="images/graph_learning_with_label.png"  width="700" height="370">
 * The key idea of GLL is to locate embedding vectors of relevant features as close as possible.    
 * We use source- and destination- embedding matrices to generate a directed adjacency matrix.
 
 ## Graph Residual Imputation Layer (GRIL)
-<img src="images/graph_residual_learning_with_label.PNG"  width="700" height="370">
+<img src="images/graph_residual_learning_with_label.png"  width="700" height="370">
 There are two key processes in this layer.              
 
 * Relation Graph Convolution: We use relevant features to estimate residuals of the complement matrix.
 * Residual Connection: we use the estimated residuals to “correct” the “complement matrix”
 
 ## Prediction Layer (PL)
-<img src="images/prediction_head.PNG"  width="700" height="370">
+<img src="images/prediction_head.png"  width="700" height="370">
 We simply used one-layer fully-connected-network for the prediction layer.
 
                  
@@ -121,14 +121,14 @@ When training the model, we consider two problems.
 1. The need for balancing tasks (avoid conflicting gradients)
 2. To guide PIG to learn how to impute not to reconstruct.
     * Example) Identity mapping (the same as the complement matrix)
-    <img src="images/identity_mapping_of_GRIL.PNG">
+    <img src="images/identity_mapping_of_GRIL.png">
     PIG can easily reduce the imputation loss simply by repeating the input.
               
                
 * Two step learning
 
 Our training strategy is decently summarized in the below figure.
-<img src="images/two_step_training.PNG">
+<img src="images/two_step_training.png">
 
 * Step 1    
     (1) Pretrain Graph Learning Layer and Prediction Layer independently.      
@@ -138,7 +138,7 @@ Our training strategy is decently summarized in the below figure.
 * Step 2    
     Multi-task learning on both imputation and prediction.      
     We randomly mask the observed values at every forward process of a mini-batch.      
-    <img src="images/random_masking.PNG">
+    <img src="images/random_masking.png">
 
 # Experiment results
 
@@ -156,7 +156,7 @@ Our training strategy is decently summarized in the below figure.
             * F1-score
 
 * Regression and imputation
-<img src="images/regr.PNG">
+<img src="images/regr.png">
 
 * Classification and imputation 
-<img src="images/cls.PNG">
+<img src="images/cls.png">
