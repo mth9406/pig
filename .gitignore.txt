@@ -1,0 +1,20 @@
+# papers
+papers/
+
+# data
+data/
+
+# experiments
+exp/
+
+# jupyternotebook files
+*.ipynb
+
+# ppt
+/ppt
+
+# __pycache__
+/main/__pycache__
+
+# results
+results/ 
