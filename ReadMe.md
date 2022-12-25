@@ -100,7 +100,8 @@ There are three main modules in the proposed model (PIG)
 
 ## Graph Learning Layer (GLL)
 <img src="images/graph_learning_with_label.png"  width="700" height="370">
-* The key idea of GLL is to locate embedding vectors of relevant features as close as possible.    
+    
+* The key idea of GLL is to locate embedding vectors of relevant features as close as possible.     
 * We use source- and destination- embedding matrices to generate a directed adjacency matrix.
 
 ## Graph Residual Imputation Layer (GRIL)
