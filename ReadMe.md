@@ -122,14 +122,14 @@ When training the model, we consider two problems.
 1. The need for balancing tasks (avoid conflicting gradients)
 2. To guide PIG to learn how to impute not to reconstruct.
     * Example) Identity mapping (the same as the complement matrix)
-    <img src="images/identity_mapping_of_GRIL.png">
-    PIG can easily reduce the imputation loss simply by repeating the input.
+        * <img src="images/identity_mapping_of_GRIL.png"  width="350" height="185">                
+        * PIG can easily reduce the imputation loss simply by repeating the input.
               
                
 * Two step learning
 
 Our training strategy is decently summarized in the below figure.
-<img src="images/two_step_training.png">
+<img src="images/two_step_training.png"  width="700" height="370">
 
 * Step 1    
     (1) Pretrain Graph Learning Layer and Prediction Layer independently.      
@@ -139,7 +139,7 @@ Our training strategy is decently summarized in the below figure.
 * Step 2    
     Multi-task learning on both imputation and prediction.      
     We randomly mask the observed values at every forward process of a mini-batch.      
-    <img src="images/random_masking.png">
+    <img src="images/random_masking.png"  width="350" height="185">
 
 # Experiment results
 
